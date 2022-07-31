@@ -6,7 +6,6 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 --no-cache-dir install --upgrade pip \
   && rm -rf /var/lib/apt/lists/*
-RUN git clone https://github.com/amareshgreat/flask-sample.git
+copy hello.py .
 RUN pip3 install flask
-CMD [ "python", "/flask-sample/hello.py"]
-
+CMD [ "python", "./hello.py"]
